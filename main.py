@@ -1,4 +1,3 @@
-import torch.nn as nn
 import pandas as pd
 import os.path
 import torch
@@ -79,6 +78,7 @@ def run_submission_inference(device):
 
     submission_df = pd.DataFrame(raw_submission_df, columns=["ImageId", "Label"])
     submission_df.to_csv("./data/submission.csv", index=False)
+    print("✨ Successfully ran submission inference and generated submission CSV")
 
 
 if __name__ == "__main__":

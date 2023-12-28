@@ -1,7 +1,6 @@
 import torch.nn as nn
 import torch
 
-# Define a class for orchestrating the network's training
 class Trainer():
     def __init__(self, network, num_epochs, learning_rate, train_batch_limit=10, eval_batch_limit=2, eval_accuracy=None,
                  device="cpu", train_dataloader=None, eval_dataloader=None):
