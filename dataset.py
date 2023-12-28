@@ -1,7 +1,6 @@
 import pandas as pd
 import torch
 from torch.utils.data import Dataset, DataLoader
-from torchvision.transforms import ToTensor
 
 TOTAL_IMAGE_PIXELS = 784
 
@@ -15,8 +14,12 @@ class DigitDataset(Dataset):
 
     def __getitem__(self, index):
         row = self.df.iloc[index]
-        label = row["label"]
+        label = row.get("label")
         pixels = self.get_pixels_tensor(row)
+
+        # The submission dataset won't have a label column, so we return a placeholder label of -1
+        if label is None:
+            label = -1
 
         return (pixels, label)
 
