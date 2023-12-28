@@ -1,0 +1,5 @@
+*.pth
+env
+.idea
+data/
+__pycache__/
