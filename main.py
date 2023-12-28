@@ -11,9 +11,6 @@ def build_network():
     base_dataset = DigitDataset("./data/train.csv", normalise_pixels=True)
     training_dataset, eval_dataset = random_split(base_dataset, [0.95, 0.05])
 
-    # Initialise the dataset for the test submission
-    test_dataset = DigitDataset("./data/test.csv", normalise_pixels=True)
-
     # Setup the dataloaders
     train_dataloader = DataLoader(training_dataset, shuffle=True, batch_size=600, num_workers=2)
     eval_dataloader = DataLoader(eval_dataset, shuffle=True, batch_size=150, num_workers=2)
@@ -31,7 +28,7 @@ def build_network():
                       train_batch_limit=-1,
                       eval_batch_limit=-1,
                       learning_rate=0.1,
-                      eval_accuracy=0.60,
+                      eval_accuracy=0.98,
                       device=device,
                       train_dataloader=train_dataloader,
                       eval_dataloader=eval_dataloader,
