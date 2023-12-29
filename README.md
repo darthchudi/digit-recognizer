@@ -6,4 +6,4 @@ The CNN achieves a score of `0.97814 / 1.00000` on the submission dataset.
 
 Kaggle Competition Link: https://www.kaggle.com/competitions/digit-recognizer/overview
 
-Kaggle Notebook: TBC
+Kaggle Notebook: https://www.kaggle.com/code/chukwudioranu/digit-recognizer
